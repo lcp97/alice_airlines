@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Luca &amp; Pamela — Flight LP1001 | Matrimonio 1° Ottobre 2026</title>
-  <meta name="description" content="Siete invitati a bordo del volo LP1001. Destinazione: il matrimonio di Luca e Pamela. 1° Ottobre 2026 — Le Rocce di Pinamare, Andora (SV).">
+  <title>Luca &amp; Pamela — Flight LP2017 | Matrimonio 1° Ottobre 2026</title>
+  <meta name="description" content="Siete invitati a bordo del volo LP2017. Destinazione: il matrimonio di Luca e Pamela. 1° Ottobre 2026 — Le Rocce di Pinamare, Andora (SV).">
   <meta name="theme-color" content="#1e3a8a">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -566,6 +566,168 @@
     .card__text strong { color: var(--blue); font-weight: 700; }
 
     /* ══════════════════════════════════════════════
+       GIFT SECTION — DAZI DOGANALI
+    ══════════════════════════════════════════════ */
+    .gift-section {
+      background: var(--smoke);
+      padding: 0 20px 100px;
+      position: relative;
+    }
+    .gift-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--blue) 30%, var(--gold) 70%, transparent);
+    }
+
+    .gift-card-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .gift-card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid rgba(30,58,138,0.09);
+      box-shadow: 0 4px 32px rgba(30,58,138,0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .gift-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+    }
+
+    .gift-card__top {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 32px 36px 24px;
+    }
+    .gift-card__icon {
+      width: 58px; height: 58px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--blue) 0%, #2d4fb0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 22px rgba(30,58,138,0.28);
+    }
+    .gift-card__icon svg {
+      width: 28px; height: 28px;
+      stroke: var(--white);
+    }
+    .gift-card__label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .gift-card__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--night);
+    }
+
+    .gift-card__divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 36px;
+      margin-bottom: 6px;
+    }
+    .gift-card__divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(30,58,138,0.08), rgba(30,58,138,0.18), rgba(30,58,138,0.08));
+    }
+
+    .gift-card__body {
+      padding: 20px 36px 36px;
+    }
+    .gift-card__text {
+      font-size: 0.92rem;
+      line-height: 1.78;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .gift-card__iban-block {
+      background: #f1f5fd;
+      border: 1px solid rgba(30,58,138,0.1);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .gift-card__iban-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .gift-card__iban-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-width: 90px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+    .gift-card__iban-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--night);
+    }
+    .gift-card__iban-code {
+      font-family: 'Montserrat', monospace;
+      font-size: 0.88rem;
+      letter-spacing: 2px;
+      color: var(--blue);
+      word-break: break-all;
+    }
+    .gift-card__iban-causale {
+      font-style: italic;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .gift-card__disclaimer {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .gift-card__disclaimer svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      stroke: var(--gold-dark);
+    }
+
+    @media (max-width: 600px) {
+      .gift-card__top { padding: 24px 22px 18px; gap: 14px; }
+      .gift-card__body { padding: 16px 22px 28px; }
+      .gift-card__divider { padding: 0 22px; }
+      .gift-card__iban-block { padding: 18px 16px; }
+      .gift-card__iban-row { flex-direction: column; gap: 4px; }
+      .gift-card__iban-label { min-width: unset; }
+    }
+
+    /* ══════════════════════════════════════════════
        CTA SECTION
     ══════════════════════════════════════════════ */
     .cta-section {
@@ -760,6 +922,68 @@
       .board__header,
       .board__row { grid-template-columns: 1.6fr 0.75fr 1.2fr; padding: 12px 12px; }
     }
+
+    /* ══════════════════════════════════════════════
+       COUNTDOWN
+    ══════════════════════════════════════════════ */
+    .hero__countdown {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 36px;
+      animation: fadeUp 0.9s ease-out 1.2s both;
+    }
+    .cdown__unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .cdown__value {
+      font-family: 'Montserrat', monospace;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 2px;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 14px 18px;
+      min-width: 80px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      transition: color 0.2s;
+    }
+    .cdown__label {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .cdown__sep {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.25);
+      padding-top: 14px;
+      line-height: 1;
+      user-select: none;
+    }
+    .cdown__value--pulse {
+      animation: valuePulse 0.3s ease-out;
+    }
+    @keyframes valuePulse {
+      0%   { color: var(--gold-light); }
+      100% { color: #fff; }
+    }
+    @media (max-width: 500px) {
+      .cdown__value { font-size: 1.7rem; padding: 10px 12px; min-width: 60px; }
+      .hero__countdown { gap: 6px; }
+      .cdown__sep { font-size: 1.5rem; padding-top: 10px; }
+    }
   </style>
 </head>
 <body>
@@ -790,7 +1014,7 @@
   <div class="hero__content">
     <div class="hero__badge" role="status">
       <span class="hero__badge-dot" aria-hidden="true"></span>
-      FLIGHT LP1001
+      FLIGHT LP2017
       <span class="hero__badge-dot" aria-hidden="true"></span>
     </div>
 
@@ -805,8 +1029,30 @@
       <div class="hero__divider-line"></div>
     </div>
 
-    <p class="hero__subtitle">Il nostro viaggio più bello sta per decollare</p>
+    <p class="hero__subtitle">Il viaggio più lungo di tutti sta per decollare</p>
     <div class="hero__date-chip">1° Ottobre 2026 &nbsp;·&nbsp; Andora, Liguria</div>
+
+    <div class="hero__countdown" aria-label="Conto alla rovescia al matrimonio">
+      <div class="cdown__unit">
+        <div class="cdown__value" id="cd-days">--</div>
+        <div class="cdown__label">Giorni</div>
+      </div>
+      <div class="cdown__sep" aria-hidden="true">:</div>
+      <div class="cdown__unit">
+        <div class="cdown__value" id="cd-hours">--</div>
+        <div class="cdown__label">Ore</div>
+      </div>
+      <div class="cdown__sep" aria-hidden="true">:</div>
+      <div class="cdown__unit">
+        <div class="cdown__value" id="cd-mins">--</div>
+        <div class="cdown__label">Minuti</div>
+      </div>
+      <div class="cdown__sep" aria-hidden="true">:</div>
+      <div class="cdown__unit">
+        <div class="cdown__value" id="cd-secs">--</div>
+        <div class="cdown__label">Secondi</div>
+      </div>
+    </div>
   </div>
 
   <div class="hero__scroll" aria-hidden="true">
@@ -831,7 +1077,7 @@
           </svg>
         </div>
         <div>
-          <div class="board-nameplate__text">LP Airlines — Matrimonio 2026</div>
+          <div class="board-nameplate__text">Alice Airlines — Matrimonio 2026</div>
           <div class="board-nameplate__sub">Luca &amp; Pamela International · Gate CUORE</div>
         </div>
       </div>
@@ -858,7 +1104,7 @@
           <div class="board__cell-sub">Andora · Via Pinamare, 14</div>
         </div>
         <div role="cell">
-          <div class="board__time" id="board-r1-time" aria-label="Orario: 16:30"></div>
+          <div class="board__time" id="board-r1-time" aria-label="Orario: 16:00"></div>
         </div>
         <div role="cell">
           <span class="board__badge board__badge--open">
@@ -872,7 +1118,7 @@
       <div class="board__row" role="row">
         <div class="board__dest" role="cell">
           <div class="board__cell" id="board-r2-dest" aria-label="Destinazione: Andora, Savona"></div>
-          <div class="board__cell-sub">Scogliera sul Mare · Volo LP1001</div>
+          <div class="board__cell-sub">Scogliera sul Mare · Volo LP2017</div>
         </div>
         <div role="cell">
           <div class="board__time" id="board-r2-time" aria-label="Data: 01 Ottobre 2026"></div>
@@ -914,7 +1160,7 @@
       <div class="card__label">Gate di Imbarco</div>
       <h3 class="card__title">Il Gate</h3>
       <p class="card__text">
-        La cerimonia si terrà direttamente sulla scogliera de <strong>Le Rocce di Pinamare</strong> — una location mozzafiato affacciata sul mare ligure.<br><br>
+        La cerimonia si terrà direttamente a <strong>Le Rocce di Pinamare</strong> — una location mozzafiato affacciata sul Mar Ligure.<br><br>
         <strong>Via Pinamare 14, Andora (SV)</strong>, Provincia di Savona.
       </p>
     </article>
@@ -931,7 +1177,7 @@
       <div class="card__label">Puntualità Obbligatoria</div>
       <h3 class="card__title">Last Call</h3>
       <p class="card__text">
-        I motori si accendono alle <strong>16:30 in punto</strong>. Gli aerei non aspettano nessuno — e nemmeno noi!<br><br>
+        I motori si accendono alle <strong>16:00 in punto</strong>. Gli aerei non aspettano nessuno — e nemmeno noi!<br><br>
         Si prega di presentarsi al gate con anticipo. Passeggeri ritardatari saranno imbarcati con la forza.
       </p>
     </article>
@@ -948,11 +1194,77 @@
       <div class="card__label">Bagaglio Consigliato</div>
       <h3 class="card__title">Dress Code</h3>
       <p class="card__text">
-        <strong>Abbigliamento elegante</strong> — adatto a una cerimonia sul mare. Giacca e cravatta per i signori, abito o tailleur per le signore.<br><br>
-        Nota bene: si cammina sulla scogliera. Il tacco va dosato con saggezza marinara.
+        <strong>Smart casual</strong> — siamo sul mare, non in passerella.<br><br>
+        Abiti leggeri ed eleganti per le signore, camicia e pantaloni per i signori. Cravatta facoltativa, sorriso obbligatorio. Il tacco sulla scogliera resta sconsigliato — anche Coco Chanel avrebbe optato per le ballerine.
       </p>
     </article>
 
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗
+     ║  DAZI DOGANALI — REGALO DI NOZZE   ║
+     ╚══════════════════════════════════════╝ -->
+<section class="gift-section" aria-label="Regalo di nozze — Dazi doganali facoltativi">
+  <div class="section-header">
+    <span class="section-label">Dogana Alice Airlines</span>
+    <h2 class="section-title">Dazi Doganali Facoltativi</h2>
+    <p class="section-desc">Il Regolamento Internazionale del Volo LP2017 prevede la possibilità — del tutto facoltativa — di versare un contributo doganale per agevolare il decollo degli sposi verso la loro nuova vita.</p>
+  </div>
+
+  <div class="gift-card-wrap">
+    <div class="gift-card">
+
+      <div class="gift-card__top">
+        <div class="gift-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+            <line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+        </div>
+        <div>
+          <div class="gift-card__label">Modulo TG-2026</div>
+          <div class="gift-card__title">Contributo Doganale Volontario</div>
+        </div>
+      </div>
+
+      <div class="gift-card__divider" aria-hidden="true">
+        <div class="gift-card__divider-line"></div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true">
+          <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+        </svg>
+        <div class="gift-card__divider-line"></div>
+      </div>
+
+      <div class="gift-card__body">
+        <p class="gift-card__text">
+          Se desiderate contribuire al nostro primo viaggio insieme come coppia, potete effettuare un bonifico in favore del seguente conto corrente ufficialmente registrato presso la Dogana del Matrimonio:
+        </p>
+
+        <div class="gift-card__iban-block">
+          <div class="gift-card__iban-row">
+            <span class="gift-card__iban-label">Intestatario</span>
+            <span class="gift-card__iban-value">PAMELA PURITA</span>
+          </div>
+          <div class="gift-card__iban-row">
+            <span class="gift-card__iban-label">IBAN</span>
+            <!-- ⚠️ INSERIRE QUI L'IBAN -->
+            <span class="gift-card__iban-value gift-card__iban-code"><!-- IBAN_QUI --></span>
+          </div>
+          <div class="gift-card__iban-row">
+            <span class="gift-card__iban-label">Causale</span>
+            <span class="gift-card__iban-value gift-card__iban-causale">Regalo di nozze Luca &amp; Pamela</span>
+          </div>
+        </div>
+
+        <p class="gift-card__disclaimer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Il versamento dei dazi è del tutto facoltativo. La vostra presenza a bordo è il regalo più prezioso.
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -962,19 +1274,18 @@
      ╚══════════════════════════════════════╝ -->
 <section class="cta-section" aria-label="Conferma presenza — Check-in">
   <div class="cta-content">
-    <div class="cta__stamp">Controllo Passaporti</div>
+    <div class="cta__stamp">Online Check-In</div>
 
-    <h2 class="cta__title">Compilate la Dichiarazione Doganale</h2>
+    <h2 class="cta__title">Effettuate il Check-In Online</h2>
 
     <p class="cta__text">
-      Per non essere respinti alla dogana del matrimonio, è obbligatorio compilare la vostra
-      dichiarazione di ingresso. Comunicate la vostra presenza entro il
-      <em>31 Agosto 2026</em> — dopo quella data il confine è chiuso e nessun appello sarà accettato.
+      Come su ogni volo che si rispetti, il check-in è obbligatorio. Comunicate la vostra presenza
+      e indicate eventuali intolleranze o preferenze alimentari per il menu di bordo.
+      Compilate il modulo entro il <em>31 Luglio 2026</em>: oltre quella data il vostro posto potrebbe essere ceduto per overbooking.
     </p>
 
-    <!-- ⚠️  Sostituire #LINK_GOOGLE_FORM_QUI con l'URL del Google Form -->
     <a
-      href="#LINK_GOOGLE_FORM_QUI"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSeWMyQMPOwXMTAR8cSrHOz9Yd81-bUwFrU0RCr6i_GZIBGxZQ/viewform?usp=dialog"
       target="_blank"
       rel="noopener noreferrer"
       class="btn-boarding"
@@ -991,7 +1302,7 @@
 
     <div class="cta__deadline">
       <div class="cta__dl-line" aria-hidden="true"></div>
-      <span class="cta__dl-text">Scadenza: <span class="cta__dl-date">31 Agosto 2026</span></span>
+      <span class="cta__dl-text">Scadenza: <span class="cta__dl-date">31 Luglio 2026</span></span>
       <div class="cta__dl-line" aria-hidden="true"></div>
     </div>
   </div>
@@ -1003,7 +1314,7 @@
      ╚══════════════════════════════════════╝ -->
 <footer>
   <p class="footer__names">Luca &amp; Pamela</p>
-  <p class="footer__flight">Flight LP1001 &nbsp;·&nbsp; 1° Ottobre 2026 &nbsp;·&nbsp; Andora, Liguria</p>
+  <p class="footer__flight">Flight LP2017 &nbsp;·&nbsp; 1° Ottobre 2026 &nbsp;·&nbsp; Andora, Liguria</p>
 </footer>
 
 
@@ -1077,7 +1388,7 @@
 
   var boardData = [
     { id: 'board-r1-dest', text: 'LE ROCCE DI PINAMARE',  delay: 600  },
-    { id: 'board-r1-time', text: '16:30',                  delay: 900  },
+    { id: 'board-r1-time', text: '16:00',                  delay: 900  },
     { id: 'board-r2-dest', text: 'ANDORA (SV) - LIGURIA', delay: 1000 },
     { id: 'board-r2-time', text: '01 OTT 2026',           delay: 1300 }
   ];
@@ -1107,6 +1418,46 @@
     /* Fallback for older browsers */
     cards.forEach(function (c) { c.classList.add('in-view'); });
   }
+
+
+  /* ── Countdown al decollo ───────────────────── */
+  (function () {
+    var target = new Date('2026-10-01T16:00:00').getTime();
+    var elDays  = document.getElementById('cd-days');
+    var elHours = document.getElementById('cd-hours');
+    var elMins  = document.getElementById('cd-mins');
+    var elSecs  = document.getElementById('cd-secs');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function pulse(el, newVal) {
+      if (el.textContent !== newVal) {
+        el.textContent = newVal;
+        el.classList.remove('cdown__value--pulse');
+        void el.offsetWidth;
+        el.classList.add('cdown__value--pulse');
+      }
+    }
+
+    function tick() {
+      var now  = Date.now();
+      var diff = target - now;
+      if (diff <= 0) {
+        elDays.textContent = elHours.textContent = elMins.textContent = elSecs.textContent = '00';
+        return;
+      }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000)  / 60000);
+      var s = Math.floor((diff % 60000)    / 1000);
+      pulse(elDays,  pad(d));
+      pulse(elHours, pad(h));
+      pulse(elMins,  pad(m));
+      pulse(elSecs,  pad(s));
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
 
 })();
 </script>
