@@ -984,6 +984,40 @@
       .hero__countdown { gap: 6px; }
       .cdown__sep { font-size: 1.5rem; padding-top: 10px; }
     }
+
+    /* Copy IBAN button */
+    .iban-copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 6px;
+      background: none;
+      border: 1.5px solid rgba(30,58,138,0.2);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .iban-copy-btn:hover {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+    }
+    .iban-copy-btn--copied {
+      background: #16a34a !important;
+      color: #fff !important;
+      border-color: #16a34a !important;
+    }
+    .iban-copy-btn svg {
+      width: 13px; height: 13px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -1249,8 +1283,13 @@
           </div>
           <div class="gift-card__iban-row">
             <span class="gift-card__iban-label">IBAN</span>
-            <!-- ⚠️ INSERIRE QUI L'IBAN -->
-            <span class="gift-card__iban-value gift-card__iban-code">IT65 Z036 6901 6009 5428 5267 341</span>
+            <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
+              <span class="gift-card__iban-value gift-card__iban-code" id="iban-text">IT65 Z036 6901 6009 5428 5267 341</span>
+              <button class="iban-copy-btn" id="iban-copy-btn" aria-label="Copia IBAN negli appunti">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span id="iban-copy-label">Copia IBAN</span>
+              </button>
+            </div>
           </div>
           <div class="gift-card__iban-row">
             <span class="gift-card__iban-label">Causale</span>
@@ -1458,6 +1497,24 @@
     tick();
     setInterval(tick, 1000);
   })();
+
+
+  /* ── Copia IBAN ─────────────────────────────── */
+  var copyBtn   = document.getElementById('iban-copy-btn');
+  var copyLabel = document.getElementById('iban-copy-label');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var iban = document.getElementById('iban-text').textContent.trim();
+      navigator.clipboard.writeText(iban).then(function () {
+        copyBtn.classList.add('iban-copy-btn--copied');
+        copyLabel.textContent = 'Copiato!';
+        setTimeout(function () {
+          copyBtn.classList.remove('iban-copy-btn--copied');
+          copyLabel.textContent = 'Copia IBAN';
+        }, 2000);
+      });
+    });
+  }
 
 })();
 </script>
